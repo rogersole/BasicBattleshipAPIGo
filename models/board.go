@@ -18,10 +18,10 @@ func NewBoard(shipPositions [][]int) (*Board, error) {
 
 	for idx, shipPosition := range shipPositions {
 		if !inBoundaries(shipPosition[0]) {
-			return nil, errors.New("X positions out of boundaries")
+			return nil, errors.New(fmt.Sprintf("X position (%v) out of boundaries", shipPosition[0]))
 		}
 		if !inBoundaries(shipPosition[1]) {
-			return nil, errors.New("Y positions out of boundaries")
+			return nil, errors.New(fmt.Sprintf("Y position (%v) out of boundaries", shipPosition[1]))
 		}
 		ship := NewShip(idx + 1, shipPosition[0], shipPosition[1])
 		board.Ships = append(board.Ships, ship)
@@ -33,11 +33,11 @@ func NewBoard(shipPositions [][]int) (*Board, error) {
 func (b *Board) Attack(x int, y int) (string, error) {
 
 	if !inBoundaries(x) {
-		return "", errors.New("X Position out of boundaries")
+		return "", errors.New(fmt.Sprintf("X position (%v) out of boundaries", x))
 	}
 
 	if !inBoundaries(y) {
-		return "", errors.New("Y Position out of boundaries")
+		return "", errors.New(fmt.Sprintf("Y position (%v) out of boundaries", y))
 	}
 
 	result := "miss"

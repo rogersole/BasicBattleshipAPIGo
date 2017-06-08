@@ -3,7 +3,7 @@ package router
 import (
 	"github.com/gorilla/mux"
 	"net/http"
-	"github.com/rogersole/simple_api/utils"
+	"github.com/rogersole/BasicBattleshipAPIGo/utils"
 )
 
 func NewRouter() *mux.Router {

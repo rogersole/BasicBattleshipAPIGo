@@ -2,7 +2,7 @@ package router
 
 import (
 	"net/http"
-	"github.com/rogersole/simple_api/cmd/simple_api/handler"
+	"github.com/rogersole/BasicBattleshipAPIGo/cmd/battleship_api/handler"
 )
 
 type Route struct {
