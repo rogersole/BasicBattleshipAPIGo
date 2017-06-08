@@ -10,6 +10,7 @@ import (
 // curl -X PUT http://localhost:8080/game?x=4&y=8
 func main() {
 	router := router.NewRouter()
+	log.Println("Initializing Server at 8080...")
 	log.Fatal(http.ListenAndServe(":8080", router))
 }
 
